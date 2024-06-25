@@ -12,6 +12,8 @@ import {
 } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -49,10 +51,11 @@ const LoginForm = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      alert("Login successful!");
+      toast.success("Login successful!");
       navigate("/dashboard");
     } catch (error) {
       setGeneralError(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -60,10 +63,11 @@ const LoginForm = () => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      alert("Signed in with Google!");
+      toast.success("Signed in with Google!");
       navigate("/dashboard");
     } catch (error) {
       setGeneralError(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -71,10 +75,11 @@ const LoginForm = () => {
     const provider = new FacebookAuthProvider();
     try {
       await signInWithPopup(auth, provider);
-      alert("Signed in with Facebook!");
+      toast.success("Signed in with Facebook!");
       navigate("/dashboard");
     } catch (error) {
       setGeneralError(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -82,15 +87,17 @@ const LoginForm = () => {
     const provider = new OAuthProvider("apple.com");
     try {
       await signInWithPopup(auth, provider);
-      alert("Signed in with Apple!");
+      toast.success("Signed in with Apple!");
       navigate("/dashboard");
     } catch (error) {
       setGeneralError(error.message);
+      toast.error(error.message);
     }
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <ToastContainer />
       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
         <div className="flex justify-start items-center mb-6">
           <Link to="/" className="hover:border-b-2 hover:border-[#EF498F] ml-3">
