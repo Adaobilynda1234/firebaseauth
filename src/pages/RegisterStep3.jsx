@@ -58,9 +58,9 @@ const RegisterStep3 = ({ onNextStep }) => {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-            <AiOutlineSearch className="w-5 h-5 text-gray-400" />
-          </div>
+          {/* <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+            <AiOutlineSearch className="w-4 h-4 text-gray-400" />
+          </div> */}
           <p className="text-xs text-gray-400 mt-1">
             Your address is not visible to other users
           </p>
@@ -76,7 +76,7 @@ const RegisterStep3 = ({ onNextStep }) => {
           </button>
           <button
             type="submit"
-            className="flex items-center px-4 py-2 border border-gray-300 rounded-lg text-[#5932EA] focus:outline-none"
+            className="flex items-center px-4 py-2 border border-gray-300 rounded-lg text-[#5932EA] ml-2 focus:outline-none"
           >
             Add Manually
           </button>

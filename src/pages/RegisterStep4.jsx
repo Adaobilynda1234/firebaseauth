@@ -53,9 +53,6 @@ const RegisterStep4 = ({ onNextStep, onRegister }) => {
     if (!formData.zipCode.trim()) {
       newErrors.zipCode = "Zip Code is required";
       formValid = false;
-    } else if (!/^\d{5}$/.test(formData.zipCode.trim())) {
-      newErrors.zipCode = "Invalid Zip Code";
-      formValid = false;
     }
 
     setErrors(newErrors);

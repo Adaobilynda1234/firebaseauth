@@ -3,10 +3,10 @@ import { Listbox } from "@headlessui/react";
 import { CalendarIcon, InformationCircleIcon } from "@heroicons/react/solid";
 
 const countries = [
-  { code: "+234", name: "NG" },
-  { code: "+44", name: "UK" },
-  { code: "+91", name: "India" },
-  // i can Add more countries as needed
+  { code: "+234" },
+  { code: "+44" },
+  { code: "+91" },
+  // Add more countries as needed
 ];
 
 const RegisterStep2 = ({ onNextStep }) => {
@@ -35,12 +35,12 @@ const RegisterStep2 = ({ onNextStep }) => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-4 bg-white rounded shadow-md">
-      <div className="flex justify-between items-center mb-4">
+    <div className="max-w-lg mx-auto p-6 bg-white rounded shadow-md">
+      <div className="flex justify-between items-center mb-6">
         <h2 className="text-lg sm:text-xl font-semibold ml-2">
           Personal Information
         </h2>
-        <p className=" text-green-500"> 2 0f 3</p>
+        <p className="text-green-500">2 of 3</p>
         <button type="button" className="text-gray-500 hover:text-gray-600">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,22 +59,22 @@ const RegisterStep2 = ({ onNextStep }) => {
         </button>
       </div>
 
-      <div className="mb-4">
+      <div className="mb-6">
         <input
           type="text"
           placeholder="Full Name"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
-          className="mt-1 mb-8 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 px-6"
+          className="mt-1 mb-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 px-4 py-2"
         />
         {errors.fullName && (
           <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>
         )}
       </div>
 
-      <div className="mb-4">
-        <div className="mt-1 flex items-center space-x-4">
-          <div className="flex items-center ">
+      <div className="mb-6">
+        <div className="mt-1 flex items-center space-x-6">
+          <div className="flex items-center">
             <span className="block text-sm font-medium text-gray-700 mr-4">
               Gender
             </span>
@@ -115,7 +115,7 @@ const RegisterStep2 = ({ onNextStep }) => {
         )}
       </div>
 
-      <div className="mb-4 relative">
+      <div className="mb-6 relative z-10">
         <div className="flex items-center text-gray-500 text-sm mb-4">
           <InformationCircleIcon className="h-5 w-5 mr-1" />
           The phone number and birthday are only visible to you.
@@ -137,7 +137,7 @@ const RegisterStep2 = ({ onNextStep }) => {
                       }`
                     }
                   >
-                    {country.code} - {country.name}
+                    {country.code}
                   </Listbox.Option>
                 ))}
               </Listbox.Options>
@@ -148,7 +148,7 @@ const RegisterStep2 = ({ onNextStep }) => {
             placeholder="Phone Number"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
-            className="flex-1 ml-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200"
+            className="flex-1 ml-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 px-4 py-2"
           />
         </div>
         {errors.phoneNumber && (
@@ -159,10 +159,10 @@ const RegisterStep2 = ({ onNextStep }) => {
       <div className="mb-8 relative">
         <input
           type="date"
-          placeholder="Birthday  Optional"
+          placeholder="Birthday (Optional)"
           value={birthday}
           onChange={(e) => setBirthday(e.target.value)}
-          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 mt-8"
+          className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 mt-4 px-4 py-2"
         />
         <CalendarIcon className="h-5 w-5 text-gray-400 absolute top-2 right-2 pointer-events-none" />
         <p className="text-gray-500 text-sm mt-4">
